@@ -1,8 +1,9 @@
-var express = require('express');
-var router = express.Router();
+'use strict';
 
-const db = require('../models');
-var Photo = db.Photo;
+const express = require('express');
+const router = express.Router();
+
+const Photo = require('../models').Photo;
 
 router.get('/gallery/:id/edit', function(req, res) {
   res.json({success: true});
