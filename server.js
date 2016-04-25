@@ -5,21 +5,15 @@ const bodyParser = require('body-parser');
 
 const galleryRoute = require('./routes/gallery');
 
-const db = require('./models');
-var Photo = db.Photo;
-
 const app = express();
+
+const db = require('./models');
 
 app.use(express.static('./public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(function(req, res, next) {
-  req.Photo = Photo;
-  next();
-});
-
 app.get('/', function(req, res) {
-
+  res.json({success: true});
 });
 
 app.use('/gallery', galleryRoute);
