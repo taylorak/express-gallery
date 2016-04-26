@@ -1,7 +1,8 @@
 @import "partials/reset";
 
 body{
-  background-color: #cf9999;
+  background-color: pink;
+
 }
 h1{
   color: white;
@@ -9,6 +10,11 @@ h1{
 
 #photoForm {
   visibility: hidden;
+}
+
+#container{
+  text-align: center;
+  position: relative;
 }
 
 #imageContainer {
@@ -19,6 +25,8 @@ h1{
   margin: auto;
   width: 300px;
   overflow: hidden;
+  margin-top: -600px;
+
 }
 
 img {
@@ -38,7 +46,8 @@ transition: margin-top .5s ease-in-out;
 }
 
 #photoBlur {
-background-color: RGBA(207, 207, 205, 0.90);
+  position: relative;
+background-color: RGBA(207, 207, 205, 0.80);
 display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
@@ -46,10 +55,19 @@ display: flex;
   margin: auto;
   width: 300px;
   height: 600px;
-z-index: 2;
+  z-index: 2;
+  visibility: visible;
 }
 
 img:hover ~ #buttons {
+  margin-top: -18px;
+  transition: margin-top .5s ease-in-out;
+  -moz-transition: margin-top .5s ease-in-out;
+  -webkit-transition: margin-top .5s ease-in-out;
+
+}
+
+#buttons:hover {
   margin-top: -18px;
   transition: margin-top .5s ease-in-out;
   -moz-transition: margin-top .5s ease-in-out;

@@ -2,6 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+/* line 6, /Users/tyleryoung/DevLeague/express-gallery/scss/partials/_reset.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -23,37 +24,52 @@ time, mark, audio, video {
   vertical-align: baseline; }
 
 /* HTML5 display-role reset for older browsers */
+/* line 27, /Users/tyleryoung/DevLeague/express-gallery/scss/partials/_reset.scss */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block; }
 
+/* line 31, /Users/tyleryoung/DevLeague/express-gallery/scss/partials/_reset.scss */
 body {
   line-height: 1; }
 
+/* line 34, /Users/tyleryoung/DevLeague/express-gallery/scss/partials/_reset.scss */
 ol, ul {
   list-style: none; }
 
+/* line 37, /Users/tyleryoung/DevLeague/express-gallery/scss/partials/_reset.scss */
 blockquote, q {
   quotes: none; }
 
+/* line 40, /Users/tyleryoung/DevLeague/express-gallery/scss/partials/_reset.scss */
 blockquote:before, blockquote:after,
 q:before, q:after {
   content: '';
   content: none; }
 
+/* line 45, /Users/tyleryoung/DevLeague/express-gallery/scss/partials/_reset.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+/* line 3, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
 body {
-  background-color: #cf9999; }
+  background-color: pink; }
 
+/* line 7, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
 h1 {
   color: white; }
 
+/* line 11, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
 #photoForm {
   visibility: hidden; }
 
+/* line 15, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+#container {
+  text-align: center;
+  position: relative; }
+
+/* line 20, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
 #imageContainer {
   display: flex;
   flex-flow: column nowrap;
@@ -61,12 +77,15 @@ h1 {
   position: relative;
   margin: auto;
   width: 300px;
-  overflow: hidden; }
+  overflow: hidden;
+  margin-top: -600px; }
 
+/* line 32, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
 img {
   height: 600px;
   width: 300px; }
 
+/* line 37, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
 #buttons {
   position: absolute;
   flex: 0 0 auto;
@@ -77,8 +96,10 @@ img {
   -moz-transition: margin-top .5s ease-in-out;
   -webkit-transition: margin-top .5s ease-in-out; }
 
+/* line 48, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
 #photoBlur {
-  background-color: RGBA(207, 207, 205, 0.9);
+  position: relative;
+  background-color: RGBA(207, 207, 205, 0.8);
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
@@ -86,9 +107,18 @@ img {
   margin: auto;
   width: 300px;
   height: 600px;
-  z-index: 2; }
+  z-index: 2;
+  visibility: visible; }
 
+/* line 62, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
 img:hover ~ #buttons {
+  margin-top: -18px;
+  transition: margin-top .5s ease-in-out;
+  -moz-transition: margin-top .5s ease-in-out;
+  -webkit-transition: margin-top .5s ease-in-out; }
+
+/* line 70, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+#buttons:hover {
   margin-top: -18px;
   transition: margin-top .5s ease-in-out;
   -moz-transition: margin-top .5s ease-in-out;
