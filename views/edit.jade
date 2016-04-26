@@ -4,9 +4,8 @@ block title
   title Image Gallery
 
 block content
-  h1 Gallery
-  div(id='blurbContainer')
-    h2(id='blurb')
+    div(id='photoBlur')
+      div(id='photoCover')
       img(src='#{photo.link}')
       form(method="POST" action="/gallery/#{photo.id}?_method=PUT")
         input(placeholder='Enter new image link' name ='link')
