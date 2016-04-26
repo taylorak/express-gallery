@@ -21,7 +21,8 @@ app.use('/gallery', galleryRoute);
 app.set('view engine', 'jade');
 app.set('views', './views');
 
-app.listen(3000, () => {
-  db.sequelize.sync();
-  console.log('server running on port 3000');
+db.sequelize.sync().then(() => {
+  app.listen(3000, () => {
+    console.log('server running on port 3000');
+  });
 });
