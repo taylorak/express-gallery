@@ -2,6 +2,7 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
 
 const galleryRoute = require('./routes/gallery');
 
@@ -11,15 +12,16 @@ const db = require('./models');
 
 app.use(express.static('./public'));
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(methodOverride('_method'));
+
+app.set('view engine', 'jade');
+app.set('views', './views');
+
+app.use('/gallery', galleryRoute);
 
 app.get('/', function(req, res) {
   res.json({success: true});
 });
-
-app.use('/gallery', galleryRoute);
-
-app.set('view engine', 'jade');
-app.set('views', './views');
 
 db.sequelize.sync().then(() => {
   app.listen(3000, () => {

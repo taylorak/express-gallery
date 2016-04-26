@@ -1,0 +1,20 @@
+doctype html
+
+block title
+  title
+    |Image
+
+block content
+  h1 Image
+  div(id='blurbContainer')
+    h2(id='blurb')
+
+  ul
+      li
+        img(src='#{photo.link}')
+        p #{photo.author}
+        p #{photo.description}
+      form(method="POST" action="/gallery/#{photo.id}?_method=PUT")
+        button Delete
+      form(method="POST" action="/gallery/#{photo.id}?_method=PUT")
+        button Delete

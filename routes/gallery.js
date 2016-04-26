@@ -6,23 +6,29 @@ const router = express.Router();
 const Photo = require('../models').Photo;
 
 
-router.get('/gallery/:id/edit', (req, res) => {
+router.get('/:id/edit', (req, res) => {
   Photo.findById(req.params.id).then((photo) => {
-    res.json({success: true});
+    res.render('edit', {
+          photo: photo
+       });
   });
 });
 
-router.get('/gallery/new', (req, res) => {
-  res.json({success: true});
+router.get('/new', (req, res) => {
+  res.render('new');
 });
 
-router.route('/gallery/:id')
+router.route('/:id')
   .get((req, res) => {
-    Photo.findById(req.params.id).then(() => {
-      res.json({success: true});
+    Photo.findById(req.params.id).then((photo) => {
+      console.log('hello there');
+      res.render('single', {
+          photo: photo
+       });
     });
   })
   .put((req, res) => {
+    console.log(req.body);
     Photo.update({
       author: req.body.author,
       link: req.body.link,
@@ -32,7 +38,9 @@ router.route('/gallery/:id')
         id : req.params.id
       }
     }).then(() => {
-      res.json({success: true});
+     res.redirect('/gallery/' + req.params.id);
+    }).catch((err) => {
+      res.json({success : false, err: err});
     });
   })
   .delete((req, res) => {
@@ -53,12 +61,11 @@ router.route('/')
        res.render('gallery', {
           photos: photos
        });
-
-    }).catch((e) => {
-      res.json({success: false, eor: e});
+    }).catch((err) => {
+      res.json({success: false, err: err});
     });
   })
-  .post((req, res) =>{
+  .post((req, res) => {
     Photo.create({
       author: req.body.author,
       link: req.body.link,
@@ -66,7 +73,7 @@ router.route('/')
     })
     .then(() => {
       res.redirect('/gallery');
-    }).catch((e) => {
+    }).catch((err) => {
       res.json({success: false});
     });
   });

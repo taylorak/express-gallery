@@ -12,6 +12,7 @@ block content
   ul
     each photo in photos
       li
-        img(src='#{photo.link}')
+        a(href='/gallery/#{photo.id}')
+          img(src='#{photo.link}')
         p #{photo.author}
         p #{photo.description}
