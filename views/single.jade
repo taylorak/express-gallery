@@ -1,20 +1,24 @@
 doctype html
 
 block title
-  title
-    |Image
+  title Image
+  style
+    include ../public/css/styles.css
 
 block content
   h1 Image
-  div(id='blurbContainer')
-    h2(id='blurb')
+  div(id="container")
+    div(id="photoForm")
+      input(placeholder='Enter new image link' name ='link')
+      button Submit
 
-  ul
-      li
-        img(src='#{photo.link}')
-        p #{photo.author}
-        p #{photo.description}
-      form(method="POST" action="/gallery/#{photo.id}?_method=PUT")
-        button Delete
-      form(method="POST" action="/gallery/#{photo.id}?_method=PUT")
-        button Delete
+    div(id="imageContainer")
+      img(id="photo" src="#{photo.link}")
+      div(id="buttons")
+        a(id="editButton" href="/gallery/#{photo.id}")
+          button Edit
+        a(id="deleteButton" href="/gallery/#{photo.id}")
+          button Delete
+  p #{photo.author}
+  p #{photo.description}
+  script(type="text/javascript" src="/js/buttonEvents.js")

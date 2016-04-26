@@ -5,20 +5,12 @@ block title
     |New Image
 
 block content
-
-  button
-    a(href= '/gallery' style= 'text-decoration: none') Back
-sa
-  form(action='/gallery' method='POST')
-    p Link
-    input(name='link')
-    p Author
-    input(name='author')
-    p Description
-    input(name='description')
-    button Post
-
-
-
-
-
+  h1 Gallery
+  div(id='blurbContainer')
+    h2(id='blurb')
+      div
+      form(method="POST" action="/gallery")
+        input(placeholder='Enter new image link' name ='link')
+        input(name='author' placeholder='author')
+        input(type='text' name ='description' placeholder='description')
+        button Submit Changes

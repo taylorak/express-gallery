@@ -7,10 +7,14 @@ const Photo = require('../models').Photo;
 
 
 router.get('/:id/edit', (req, res) => {
-  Photo.findById(req.params.id).then((photo) => {
+  Photo.findById(req.params.id)
+  .then((photo) => {
     res.render('edit', {
           photo: photo
        });
+  })
+  .catch((err) => {
+    res.json({success : false, err: err});
   });
 });
 
@@ -20,15 +24,17 @@ router.get('/new', (req, res) => {
 
 router.route('/:id')
   .get((req, res) => {
-    Photo.findById(req.params.id).then((photo) => {
-      console.log('hello there');
+    Photo.findById(req.params.id)
+    .then((photo) => {
       res.render('single', {
           photo: photo
        });
+    })
+    .catch((err) => {
+      res.json({success : false, err: err});
     });
   })
   .put((req, res) => {
-    console.log(req.body);
     Photo.update({
       author: req.body.author,
       link: req.body.link,
@@ -44,12 +50,12 @@ router.route('/:id')
     });
   })
   .delete((req, res) => {
-    Photo.destory({
+    Photo.destroy({
       where: {
         id: req.params.id
       }
     }).then(() => {
-      res.json({success: true});
+      res.json({success: true, redirect: '/gallery'});
     });
   });
 

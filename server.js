@@ -20,7 +20,7 @@ app.set('views', './views');
 app.use('/gallery', galleryRoute);
 
 app.get('/', function(req, res) {
-  res.json({success: true});
+  res.render('index');
 });
 
 db.sequelize.sync().then(() => {
@@ -28,3 +28,5 @@ db.sequelize.sync().then(() => {
     console.log('server running on port 3000');
   });
 });
+
+module.exports = app;
