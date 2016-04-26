@@ -5,6 +5,7 @@ const router = express.Router();
 
 const Photo = require('../models').Photo;
 
+
 router.get('/gallery/:id/edit', (req, res) => {
   res.json({success: true});
 });
@@ -33,8 +34,8 @@ router.route('/')
           photos: photos
        });
 
-    }).catch((err) => {
-      res.json({success: false, error: err});
+    }).catch((e) => {
+      res.json({success: false, eor: e});
     });
   })
   .post((req, res) =>{
@@ -45,7 +46,7 @@ router.route('/')
     })
     .then(() => {
       res.redirect('/gallery');
-    }).catch((err) => {
+    }).catch((e) => {
       res.json({success: false});
     });
   });
