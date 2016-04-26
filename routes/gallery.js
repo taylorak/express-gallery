@@ -5,44 +5,47 @@ const router = express.Router();
 
 const Photo = require('../models').Photo;
 
-router.get('/gallery/:id/edit', function(req, res) {
+router.get('/gallery/:id/edit', (req, res) => {
   res.json({success: true});
 });
 
-router.get('/gallery/new', function(req, res) {
+router.get('/gallery/new', (req, res) => {
   res.json({success: true});
 });
 
 router.route('/gallery/:id')
-  .get(function(req, res) {
+  .get((req, res) => {
     res.json({success: true});
   })
-  .put(function(req, res) {
+  .put((req, res) => {
     res.json({success: true});
   })
-  .delete(function(req, res) {
+  .delete((req, res) => {
     res.json({success: true});
   });
 
 
 router.route('/')
-  .get(function(req, res) {
+  .get((req, res) => {
     Photo.findAll()
-    .then(function() {
-      res.json({success: true});
-    }).catch(function(err) {
+    .then((photos) => {
+       res.render('gallery', {
+          photos: photos
+       });
+
+    }).catch((err) => {
       res.json({success: false, error: err});
     });
   })
-  .post(function(req, res) {
+  .post((req, res) =>{
     Photo.create({
       author: req.body.author,
       link: req.body.link,
       description: req.body.description
     })
-    .then(function() {
-      res.json({success: true});
-    }).catch(function(err) {
+    .then(() => {
+      res.redirect('/gallery');
+    }).catch((err) => {
       res.json({success: false});
     });
   });
