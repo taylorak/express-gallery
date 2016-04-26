@@ -4,6 +4,8 @@
   "description": "Express Gallery ===============",
   "main": "server.js",
   "scripts": {
+    "build-css": "node-sass --include-path scss ./scss/styles.scss ./public/css/styles.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
   },
@@ -30,10 +32,15 @@
   "devDependencies": {
     "browser-sync": "^2.12.3",
     "chai": "^3.5.0",
+    "connect-livereload": "^0.5.4",
     "gulp": "^3.9.1",
     "gulp-connect": "^3.2.2",
+    "gulp-nodemon": "^2.0.6",
     "gulp-sass": "^2.3.1",
+    "live-reload": "^1.1.0",
     "mocha": "^2.4.5",
-    "supertest": "^1.2.0"
+    "node-sass": "^3.6.0",
+    "supertest": "^1.2.0",
+    "tiny-lr": "^0.2.1"
   }
 }

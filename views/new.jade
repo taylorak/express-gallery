@@ -1,0 +1,10 @@
+block content
+  h1 Gallery
+  div(id='blurbContainer')
+    h2(id='blurb')
+      div
+      form(method="POST" action="/gallery")
+        input(placeholder='Enter new image link' name ='link')
+        input(name='author' placeholder='author')
+        input(type='text' name ='description' placeholder='description')
+        button Submit Changes

@@ -1,18 +1,16 @@
 doctype html
 
 block title
-  title
-    |Image Gallery
+  title Image Gallery
 
 block content
   h1 Gallery
   div(id='blurbContainer')
     h2(id='blurb')
-
-          img(src='#{photo.link}')
-        form(method="POST" action="/gallery/#{photo.id}?_method=PUT")
-          input(placeholder='Enter new image link' name ='link')
-          input(value='#{photo.author}' name='author' placeholder='#{photo.author}')
-          input(type='text' value='#{photo.description}' name ='description' placeholder='#{photo.description}')
-          button Submit Changes
+      img(src='#{photo.link}')
+      form(method="POST" action="/gallery/#{photo.id}?_method=PUT")
+        input(placeholder='Enter new image link' name ='link')
+        input(value='#{photo.author}' name='author' placeholder='#{photo.author}')
+        input(type='text' value='#{photo.description}' name ='description' placeholder='#{photo.description}')
+        button Submit Changes
 
