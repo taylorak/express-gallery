@@ -1,43 +1,40 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-var connect= require('gulp-connect');
-var nodemon= require('gulp-nodemon');
+var nodemon = require('gulp-nodemon');
 var browserSync = require('browser-sync').create();
 
+gulp.task('sass',  function () {
+  return gulp.src('./scss/*.scss')
+      .pipe(sass({
+        errLogToConsole : true,
+        sourceComments : true,
+      }).on('error', sass.logError))
+      .pipe(gulp.dest('./public/css'));
+});
 
-gulp.task('start', function () {
-  nodemon({
-    server : 'server.js',
-    ext: 'js jade html scss',
-    env: { 'NODE_ENV': 'development' }
+gulp.task('browserSync', ['nodemon'], function() {
+  browserSync.init(null, {
+    proxy: "http://localhost:3000",
+        port: 7000
   });
 });
 
-gulp.task('connect', function(){
-  connect.server({
+gulp.task('watch', function () {
+  gulp.watch('./scss/**/*.scss', ['sass']);
+  gulp.watch('public/**/*.*').on('change', browserSync.reload);
+
+});
+
+gulp.task('nodemon', function (cb) {
+  var started = false;
+  return nodemon({
+    script: 'server.js'
+  }).on('start', function () {
+    if (!started) {
+      cb();
+      started = true;
+    }
   });
 });
 
-gulp.task('browser-sync', function() {
-    browserSync.init({
-        proxy: "localhost:3000"
-    });
-});
-
-gulp.task('sass', function() {
-   gulp.src('scss/*.scss')
-       .pipe(sass())
-       .pipe(gulp.dest('./public/css/'))
-      .pipe(browserSync.stream());
-});
-
-
-gulp.task('watch', function() {
-  gulp.watch('scss/**/*.scss',['sass']);
-  gulp.watch("public/*.*").on('change', browserSync.reload);
-
-
-
-});
-
-gulp.task('default', ['serve, connect','sass','watch', 'start']);
+gulp.task('default', ['watch', 'sass', 'browserSync']);
