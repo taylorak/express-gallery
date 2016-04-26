@@ -1,0 +1,24 @@
+doctype html
+
+block title
+  title
+    |New Image
+
+block content
+
+  button
+    a(href= '/gallery' style= 'text-decoration: none') Back
+sa
+  form(action='/gallery' method='POST')
+    p Link
+    input(name='link')
+    p Author
+    input(name='author')
+    p Description
+    input(name='description')
+    button Post
+
+
+
+
+
