@@ -1,9 +1,64 @@
+@import "partials/reset";
 
+#mainGallery {
+background-color: RGBA(168, 227, 255, 1.00);
+margin: 0 auto;
+}
+#headerGallery{
+  background-color: red;
+  margin: 0 auto;
+  width: 75%;
+  margin-top: 3%;
+  display: flex;
+  flex: row nowrap;
+  border-top: dashed 1px RGBA(114, 114, 114, 1.00);
+  right: 0;
+  #titleGallery{
+    margin: 1% 1% 1% 1%;
+    background-color: blue;
+    font-size: 5.1em;
+    color: RGBA(114, 114, 114, 1.00);
+    width: 50%;
+    padding: 2% 2% 2% 2%;
+    min-height: 10%;
+    border-right: solid 1px RGBA(114, 114, 114, 1.00);
+    text-align: right;
+    right: 0;
+    margin: 0 auto;
+  }
+  #blurbGallery{
+    margin-left: 1%;
+    background-color: yellow;
+    width: 35%;
+    padding: 2% 2% 2% 2%;
+    font-size: 12px;
+    right: 0;
+  }
+}
 
+#largePhotoGallery {
+    padding: 2% 0 2% 0;
+    margin: 0 auto;
+    width: 965px;
+  }
 
-
-
-
+#mixedPhotosGallery{
+display: flex;
+justify-content: center;
+background-color: pink;
+width: 75%;
+margin: 0 auto;
+flex-flow: row wrap;
+  .smallPhotosGallery{
+    max-width: 250px;
+    max-height: 250px;
+    // padding: 0 2% 0 2%;
+      img {
+        max-width: 250px;
+    max-height: 250px;
+      }
+    }
+}
 
 
 
@@ -37,11 +92,8 @@
 // EDIT SECTION
 // ~ * ~ * ~ * ~ * ~ * ~ * ~ * ~ *  ~ * ~ * ~ * ~ *  ~ * ~ * ~ * ~ *
 
-// @import "partials/reset";
 
-// body{
-//   background-color : pink;
-// }
+
 
 // h1{
 //   color : white;

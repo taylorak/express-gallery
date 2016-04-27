@@ -1,0 +1,113 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* line 6, /Users/tyleryoung/DevLeague/express-gallery/scss/partials/_reset.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+/* line 27, /Users/tyleryoung/DevLeague/express-gallery/scss/partials/_reset.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+/* line 31, /Users/tyleryoung/DevLeague/express-gallery/scss/partials/_reset.scss */
+body {
+  line-height: 1; }
+
+/* line 34, /Users/tyleryoung/DevLeague/express-gallery/scss/partials/_reset.scss */
+ol, ul {
+  list-style: none; }
+
+/* line 37, /Users/tyleryoung/DevLeague/express-gallery/scss/partials/_reset.scss */
+blockquote, q {
+  quotes: none; }
+
+/* line 40, /Users/tyleryoung/DevLeague/express-gallery/scss/partials/_reset.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+/* line 45, /Users/tyleryoung/DevLeague/express-gallery/scss/partials/_reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* line 3, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+#mainGallery {
+  background-color: RGBA(168, 227, 255, 1);
+  margin: 0 auto; }
+
+/* line 7, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+#headerGallery {
+  background-color: red;
+  margin: 0 auto;
+  width: 75%;
+  margin-top: 3%;
+  display: flex;
+  flex: row nowrap;
+  border-top: dashed 1px RGBA(114, 114, 114, 1);
+  right: 0; }
+  /* line 16, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+  #headerGallery #titleGallery {
+    margin: 1% 1% 1% 1%;
+    background-color: blue;
+    font-size: 5.1em;
+    color: RGBA(114, 114, 114, 1);
+    width: 50%;
+    padding: 2% 2% 2% 2%;
+    min-height: 10%;
+    border-right: solid 1px RGBA(114, 114, 114, 1);
+    text-align: right;
+    right: 0;
+    margin: 0 auto; }
+  /* line 29, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+  #headerGallery #blurbGallery {
+    margin-left: 1%;
+    background-color: yellow;
+    width: 35%;
+    padding: 2% 2% 2% 2%;
+    font-size: 12px;
+    right: 0; }
+
+/* line 39, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+#largePhotoGallery {
+  padding: 2% 0 2% 0;
+  margin: 0 auto;
+  width: 965px; }
+
+/* line 45, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+#mixedPhotosGallery {
+  display: flex;
+  justify-content: center;
+  background-color: pink;
+  width: 75%;
+  margin: 0 auto;
+  flex-flow: row wrap; }
+  /* line 52, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+  #mixedPhotosGallery .smallPhotosGallery {
+    max-width: 250px;
+    max-height: 250px; }
+    /* line 56, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+    #mixedPhotosGallery .smallPhotosGallery img {
+      max-width: 250px;
+      max-height: 250px; }
