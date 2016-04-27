@@ -2,7 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
-var passport = require('passport');
+const passport = require('passport');
 
 router.route('/')
   .get((req, res) => {
