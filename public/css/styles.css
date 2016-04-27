@@ -53,11 +53,14 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/* line 6, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+@-ms-viewport {
+  width: device-width; }
+
+/* line 9, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
 #mainGallery {
   margin: 0 auto; }
 
-/* line 10, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+/* line 13, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
 #loginGallery {
   display: flex;
   top: 0;
@@ -70,17 +73,17 @@ table {
   height: 2.5%;
   font-family: 'Roboto';
   font-weight: 100; }
-  /* line 23, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+  /* line 26, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
   #loginGallery a, #loginGallery p {
     padding: .25%;
     text-decoration: none;
     color: RGBA(114, 114, 114, 1); }
 
-/* line 30, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+/* line 33, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
 #edgeGaurd {
   padding-right: 1%; }
 
-/* line 34, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+/* line 37, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
 #headerGallery {
   font-family: 'Helvetica', sans-serif;
   font-weight: 900;
@@ -91,7 +94,7 @@ table {
   flex: row nowrap;
   border-top: dotted 1px RGBA(114, 114, 114, 1);
   right: 0; }
-  /* line 45, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+  /* line 48, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
   #headerGallery #titleGallery {
     margin: 2% 0 1% 8%;
     font-size: 5vw;
@@ -102,7 +105,7 @@ table {
     border-right: solid 1px RGBA(114, 114, 114, 1);
     text-align: right;
     right: 0; }
-  /* line 57, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+  /* line 60, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
   #headerGallery #blurbGallery {
     margin-left: 2%;
     width: 35%;
@@ -112,23 +115,23 @@ table {
     font-family: 'Roboto', sans-serif;
     font-weight: 100; }
 
-/* line 67, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+/* line 70, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
 #largePhotoGallery {
   padding: 2% 0 2% 0;
   margin: 0 auto;
   width: 75%;
   height: 400px; }
-  /* line 72, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+  /* line 75, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
   #largePhotoGallery #large {
     width: 100%;
     height: 100%;
     background-size: cover;
     background-position: center; }
-  /* line 78, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+  /* line 81, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
   #largePhotoGallery #small {
     display: none; }
 
-/* line 82, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+/* line 85, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
 #mixedPhotosGallery {
   display: flex;
   justify-content: space-between;
@@ -137,14 +140,14 @@ table {
   margin: 0 auto;
   flex-flow: row wrap;
   padding-bottom: 2%; }
-  /* line 91, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+  /* line 94, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
   #mixedPhotosGallery a {
     text-decoration: none;
     padding-bottom: 2%;
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
     color: RGBA(114, 114, 114, 1); }
-  /* line 98, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+  /* line 101, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
   #mixedPhotosGallery .smallPhotosGallery {
     flex: 1 1 33%;
     height: 275px;
@@ -152,7 +155,7 @@ table {
     background-position: center;
     padding-bottom: 2%; }
 
-/* line 106, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+/* line 109, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
 .spacerGallery {
   margin: 0 auto;
   width: 75%;
@@ -162,7 +165,7 @@ table {
   opacity: 0.5; }
 
 @media screen and (max-width: 800px) {
-  /* line 118, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+  /* line 121, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
   #headerGallery {
     font-family: 'Helvetica', sans-serif;
     font-weight: 900;
@@ -172,7 +175,7 @@ table {
     display: flex;
     flex-flow: column nowrap;
     border-top: dotted 1px RGBA(114, 114, 114, 1); }
-    /* line 128, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+    /* line 131, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
     #headerGallery #titleGallery {
       font-size: 11vw;
       flex: 0 0 75%;
@@ -185,7 +188,7 @@ table {
       border-right: 0px;
       text-align: right;
       margin: 2% 0 2% 0; }
-    /* line 141, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+    /* line 144, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
     #headerGallery #blurbGallery {
       padding: 2% 0 2% 0;
       font-size: 12px;
@@ -197,7 +200,7 @@ table {
       margin: 0; } }
 
 @media screen and (max-width: 1348px) {
-  /* line 156, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+  /* line 159, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
   #mixedPhotosGallery {
     display: flex;
     width: 75%;
@@ -206,17 +209,17 @@ table {
     justify-content: space-around;
     flex-flow: row nowrap;
     padding-bottom: 2%; }
-    /* line 165, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+    /* line 168, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
     #mixedPhotosGallery a {
       text-decoration: none;
       padding-bottom: 2%;
       font-family: 'Roboto', sans-serif;
       font-weight: 100;
       color: RGBA(114, 114, 114, 1); }
-      /* line 171, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+      /* line 174, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
       #mixedPhotosGallery a p {
         padding: 1% 0 1% 0; }
-    /* line 175, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+    /* line 178, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
     #mixedPhotosGallery .smallPhotosGallery {
       flex: 1 1 60%;
       height: 400px;
@@ -224,7 +227,7 @@ table {
       background-position: center; } }
 
 @media screen and (max-width: 1100px) {
-  /* line 186, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+  /* line 189, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
   #mixedPhotosGallery {
     display: flex;
     width: 75%;
@@ -233,17 +236,17 @@ table {
     justify-content: space-between;
     flex-flow: row wrap;
     padding-bottom: 2%; }
-    /* line 195, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+    /* line 198, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
     #mixedPhotosGallery a {
       text-decoration: none;
       padding-bottom: 2%;
       font-family: 'Roboto', sans-serif;
       font-weight: 100;
       color: RGBA(114, 114, 114, 1); }
-      /* line 201, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+      /* line 204, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
       #mixedPhotosGallery a p {
         padding: 1% 0 1% 0; }
-    /* line 205, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+    /* line 208, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
     #mixedPhotosGallery .smallPhotosGallery {
       flex: 1 1 60%;
       height: 400px;
@@ -251,7 +254,7 @@ table {
       background-position: center; } }
 
 @media screen and (max-width: 900px) {
-  /* line 216, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+  /* line 219, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
   #mixedPhotosGallery {
     display: flex;
     width: 70%;
@@ -260,17 +263,17 @@ table {
     justify-content: space-between;
     flex-flow: column nowrap;
     padding-bottom: 2%; }
-    /* line 225, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+    /* line 228, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
     #mixedPhotosGallery a {
       text-decoration: none;
       padding-bottom: 2%;
       font-family: 'Roboto', sans-serif;
       font-weight: 100;
       color: RGBA(114, 114, 114, 1); }
-      /* line 231, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+      /* line 234, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
       #mixedPhotosGallery a p {
         padding: 1% 0 1% 0; }
-    /* line 235, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+    /* line 238, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
     #mixedPhotosGallery .smallPhotosGallery {
       flex: 1 1 60%;
       height: 600px;
@@ -278,7 +281,7 @@ table {
       background-position: center; } }
 
 @media screen and (max-width: 615px) {
-  /* line 246, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+  /* line 249, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
   #mixedPhotosGallery {
     display: flex;
     width: 90%;
@@ -286,34 +289,35 @@ table {
     margin: 0 auto;
     justify-content: space-between;
     flex-flow: column nowrap;
-    padding-bottom: 2%; }
-    /* line 255, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+    padding-bottom: 2%;
+    padding-top: 1%; }
+    /* line 259, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
     #mixedPhotosGallery a {
       text-decoration: none;
       padding-bottom: 2%;
       font-family: 'Roboto', sans-serif;
       font-weight: 100;
       color: RGBA(114, 114, 114, 1); }
-      /* line 261, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+      /* line 265, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
       #mixedPhotosGallery a p {
         padding: 1% 0 1% 0; }
-    /* line 265, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+    /* line 269, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
     #mixedPhotosGallery .smallPhotosGallery {
       flex: 1 1 60%;
-      height: 600px;
+      height: 450px;
       background-size: cover;
       background-position: center; }
-  /* line 273, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+  /* line 277, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
   .spacerGallery {
     margin: 1 1 100%;
     width: 95%;
     height: 10px;
     margin-bottom: 3%;
     border-bottom: solid 1px grey; }
-  /* line 280, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+  /* line 284, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
   #largePhotoGallery {
     width: 95%; }
-  /* line 283, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+  /* line 287, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
   #headerGallery {
     font-family: 'Helvetica', sans-serif;
     font-weight: 900;
@@ -321,12 +325,44 @@ table {
     width: 95%;
     margin-top: 7%;
     display: flex;
-    flex: row nowrap;
+    flex: 1 1 auto;
+    flex-flow: column nowrap;
     border-top: dotted 0.5px RGBA(114, 114, 114, 1);
-    right: 0; } }
+    right: 0; }
+  /* line 299, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+  #titleGallery {
+    flex: 1 1 auto;
+    height: 10%; }
+  /* line 304, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+  #blurbGallery {
+    flex: 1 1 auto;
+    margin-left: 2%;
+    margin-top: 0px;
+    width: 35%;
+    margin-bottom: 20px;
+    padding: 2% 0 2% 2%;
+    font-size: 12px;
+    right: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100; }
+  /* line 316, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+  #largePhotoGallery {
+    padding: 2% 0 2% 0;
+    flex: 1 1 95%;
+    margin: 0 auto;
+    height: 400px; }
+    /* line 321, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+    #largePhotoGallery #large {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center; }
+    /* line 327, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+    #largePhotoGallery #small {
+      display: none; } }
 
 @media screen and (min-width: 1795px) {
-  /* line 297, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+  /* line 337, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
   #mixedPhotosGallery {
     display: flex;
     justify-content: space-around;
@@ -335,14 +371,14 @@ table {
     margin: 0 auto;
     flex-flow: row nowrap;
     padding-bottom: 2%; }
-    /* line 305, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+    /* line 345, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
     #mixedPhotosGallery a {
       text-decoration: none;
       padding-bottom: 2%;
       font-family: 'Roboto', sans-serif;
       font-weight: 100;
       color: RGBA(114, 114, 114, 1); }
-    /* line 312, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
+    /* line 352, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
     #mixedPhotosGallery .smallPhotosGallery {
       flex: 1 1 33%;
       height: 275px;
