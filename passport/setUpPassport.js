@@ -18,9 +18,12 @@ var setUpPassport = () => {
 
   passport.use('login', new LocalStrategy(
     (username, password, done) => {
-    User.findOne({username: username})
+      console.log("LOGIN");
+    User.findOne({where: {username: username}})
     .then((user) => {
+      console.log('LOGIN', user);
       if(!user) {
+        console.log('NO USER');
         return done(null, false, {message: "No user has that username."});
       }
       if (user.password === password) {
