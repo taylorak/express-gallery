@@ -39,8 +39,6 @@ module.exports = {
   },
 
   down: function (queryInterface, Sequelize) {
-      return queryInterface.bulkDelete('Photos', [{
-        id: 1
-      }], {});
+      return queryInterface.bulkDelete('Photos', null, {});
   }
 };
