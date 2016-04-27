@@ -1,76 +1,193 @@
-@import "partials/reset";
 
-body{
-  background-color: pink;
 
-}
-h1{
-  color: white;
-}
 
-#photoForm {
-  visibility: hidden;
-}
 
-#container{
-  text-align: center;
-  position: relative;
-}
 
-#imageContainer {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-between;
-  position: relative;
-  margin: auto;
-  width: 300px;
-  overflow: hidden;
-  margin-top: -600px;
 
-}
 
-img {
-  height: 600px;
-  width: 300px;
-}
 
-#buttons {
-  position: absolute;
-  flex: 0 0 auto;
-  flex-flow: row nowrap;
-  right: 0;
-margin-top: 0px;
-transition: margin-top .5s ease-in-out;
-    -moz-transition: margin-top .5s ease-in-out;
-    -webkit-transition: margin-top .5s ease-in-out;
-}
 
-#photoBlur {
-  position: relative;
-background-color: RGBA(207, 207, 205, 0.80);
-display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-between;
-  position: relative;
-  margin: auto;
-  width: 300px;
-  height: 600px;
-  z-index: 2;
-  visibility: visible;
-}
 
-img:hover ~ #buttons {
-  margin-top: -18px;
-  transition: margin-top .5s ease-in-out;
-  -moz-transition: margin-top .5s ease-in-out;
-  -webkit-transition: margin-top .5s ease-in-out;
 
-}
 
-#buttons:hover {
-  margin-top: -18px;
-  transition: margin-top .5s ease-in-out;
-  -moz-transition: margin-top .5s ease-in-out;
-  -webkit-transition: margin-top .5s ease-in-out;
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ~ * ~ * ~ * ~ * ~ * ~ * ~ * ~ *  ~ * ~ * ~ * ~ *  ~ * ~ * ~ * ~ *
+// EDIT SECTION
+// ~ * ~ * ~ * ~ * ~ * ~ * ~ * ~ *  ~ * ~ * ~ * ~ *  ~ * ~ * ~ * ~ *
+
+// @import "partials/reset";
+
+// body{
+//   background-color : pink;
+// }
+
+// h1{
+//   color : white;
+// }
+
+// #container{
+//   position   : relative;
+//   text-align : center;
+//   // max-width : 100%;
+//   // max-height: 100%;
+// }
+
+// #imageContainer {
+//   position  : relative;
+//   display   : flex;
+//   overflow  : hidden;
+//   height    : 50%;
+//   max-width : 50%;
+//   margin    : auto;
+//   flex-flow : column nowrap;
+// }
+
+// img {
+//   height : 50%;
+//   width  : 50%;
+// }
+
+// #buttons {
+//   position           : absolute;
+//   right              : 0;
+//   -webkit-transition : margin-top .5s ease-in-out;
+//   -moz-transition    : margin-top .5s ease-in-out;
+//   transition         : margin-top .5s ease-in-out;
+//   flex               : 0 0 auto;
+//   flex-flow          : row nowrap;
+
+//   button{
+//     display               : inline-block;
+//     cursor                : pointer;
+//     opacity               : 0.6;
+//     background-color      : #b8b8b8;
+//     font-family           : Roboto;
+//     font-size             : .75em;
+//     font-weight           : bold;
+//     color                 : #ffffff;
+//     text-decoration       : none;
+//     border                : none;
+//     box-shadow            : 0 2% 3% -2% #d6d6d6;
+//     outline               : none;
+//   }
+
+//   button:hover {
+//     background-color : #a8a8a8;
+//     border           : none;
+//     outline          : none;
+//   }
+
+//   button:active {
+//     position : relative;
+//     top      : 1%;
+//     border   : none;
+//     outline  : none;
+//   }
+// }
+
+// #photoBlur {
+//   position         : absolute;
+//   display          : flex;
+//   height           : 100%;
+//   width            : 100%;
+//   background-color : RGBA(245, 245, 245, 0.80);
+//   flex-flow        : column nowrap;
+//   justify-content  : space-between;
+
+//   input {
+//     width      : 100%;
+//     margin     : 0 0 10% 0;
+//     padding    : 3% 0 3% 1%;
+//     opacity    : 0.8;
+//     border     : solid 1px #dcdcdc;
+//     border     : none;
+//     outline    : none;
+//     transition : box-shadow 0.3s, border 0.3s;
+//   }
+
+//   input:focus{
+//     border     : solid 1px #707070;
+//     border     : none;
+//     box-shadow : 0 0 5px 1px grey;
+//     outline    : none;
+//   }
+
+//   button{
+//     display               : inline-block;
+//     margin-right: 2%;
+//     padding               : 10px 24px;
+//     cursor                : pointer;
+//     opacity               : 0.9;
+//     font-family           : Arial;
+//     font-size             : 0.8em;
+//     font-weight           : bold;
+//     color                 : #ffffff;
+//     text-decoration       : none;
+//     border                : none;
+//     border-radius         : 5px;
+//     outline               : none;
+//   }
+
+//   button:hover {
+//     background-color : #a8a8a8;
+//     border           : none;
+//     outline          : none;
+//   }
+
+//   button:active {
+//     position : relative;
+//     top      : 1px;
+//     border   : none;
+//     outline  : none;
+//   }
+// }
+
+// #photoForm {
+//   margin-top : 10%;
+// }
+
+// img:hover ~ #buttons {
+//   margin-top         : -4%;
+//   -webkit-transition : margin-top .25s ease-in-out;
+//   -moz-transition    : margin-top .25s ease-in-out;
+//   transition         : margin-top .25s ease-in-out;
+// }
+
+// #buttons:hover {
+//   margin-top         : -4%;
+//   -webkit-transition : margin-top .25s ease-in-out;
+//   -moz-transition    : margin-top .25s ease-in-out;
+//   transition         : margin-top .25s ease-in-out;
+// }
+
+// .editShow {
+//   visibility : visible;
+//   opacity    : 1.0
+// }
+
+// .editHide {
+//   visibility : hidden;
+//   opacity    : 0.0;
+// }
