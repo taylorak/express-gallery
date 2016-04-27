@@ -2,15 +2,16 @@
 
 const express = require('express');
 const router = express.Router();
-
-// const User = require('../models').User;
+var passport = require('passport');
 
 router.route('/')
   .get((req, res) => {
     res.render('login');
   })
-  .post((req, res) => {
-    res.json({success : true});
-  });
+  .post(passport.authenticate('login', {
+    successRedirect: '/gallery',
+    failureRedirect: '/login',
+    failureFlash: false
+  }));
 
 module.exports = router;

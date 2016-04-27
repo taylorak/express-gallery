@@ -3,22 +3,23 @@ const LocalStrategy = require('passport-local').Strategy;
 
 var User = require('../models').User;
 
+var setUpPassport = () => {
 
-function setUpPassport() {
-  passport.serializeUser(function(user, done) {
+  passport.serializeUser((user, done) => {
     done(null, user.id);
   });
 
-  passport.deserializeUser(function(id, done) {
-    User.findById(id, function(err, user) {
-      done(err, user);
+  passport.deserializeUser((id, done) => {
+    User.findById(id)
+    .then((user) => {
+      done(null, user);
     });
   });
 
   passport.use('login', new LocalStrategy(
-    function(username, password, done) {
+    (username, password, done) => {
     User.findOne({username: username})
-    .then(function(user) {
+    .then((user) => {
       if(!user) {
         return done(null, false, {message: "No user has that username."});
       }
@@ -28,10 +29,10 @@ function setUpPassport() {
         return done(null, false, {message: "Invalid password."});
       }
     })
-    .catch(function(err) {
+    .catch((err) => {
       return done(err);
     });
   }));
-}
+};
 
 module.exports = setUpPassport;

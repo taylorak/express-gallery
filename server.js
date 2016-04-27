@@ -20,7 +20,6 @@ const db = require('./models');
 app.set('view engine', 'jade');
 app.set('views', './views');
 
-setUpPassport();
 app.use(cookieParser());
 app.use(flash());
 app.use(session({secret: 'catbutts', resave: false, saveUninitialized: false}));
@@ -29,12 +28,17 @@ app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
+setUpPassport();
 
 app.use('/gallery', galleryRoute);
 app.use('/register', registerRoute);
 app.use('/login', loginRoute);
+app.use('/logout', (req, res) => {
+  req.logout();
+  res.redirect('/gallery');
+});
 
-app.get('/', function(req, res) {
+app.get('/', (req, res) => {
   res.render('index');
 });
 
