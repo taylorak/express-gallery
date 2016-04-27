@@ -8,11 +8,11 @@ const flash = require('connect-flash');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
 
 const galleryRoute = require('./routes/gallery');
 const registerRoute = require('./routes/register');
 const loginRoute = require('./routes/login');
+const setUpPassport = require('./passport/setUpPassport');
 
 const app = express();
 const db = require('./models');
@@ -20,6 +20,7 @@ const db = require('./models');
 app.set('view engine', 'jade');
 app.set('views', './views');
 
+setUpPassport();
 app.use(cookieParser());
 app.use(flash());
 app.use(session({secret: 'catbutts', resave: false, saveUninitialized: false}));
