@@ -1,9 +1,12 @@
-var passport = require('passport');
+'use strict';
+
+const passport = require('passport');
+const bcrypt = require('bcrypt');
 const LocalStrategy = require('passport-local').Strategy;
 
-var User = require('../models').User;
+const User = require('../models').User;
 
-var setUpPassport = () => {
+let setUpPassport = () => {
 
   passport.serializeUser((user, done) => {
     done(null, user.id);
@@ -18,16 +21,23 @@ var setUpPassport = () => {
 
   passport.use('login', new LocalStrategy(
     (username, password, done) => {
-    User.findOne({username: username})
+    User.findOne({where: {username: username}})
     .then((user) => {
       if(!user) {
         return done(null, false, {message: "No user has that username."});
       }
-      if (user.password === password) {
-        return done(null, user);
-      } else {
-        return done(null, false, {message: "Invalid password."});
-      }
+      bcrypt.compare(password, user.password, (err, res) => {
+        if(res === true) {
+          return done(null, user);
+        } else {
+          return done(null, false, {message: "Invalid password."});
+        }
+      });
+      // if (user.password === password) {
+      //   return done(null, user);
+      // } else {
+      //   return done(null, false, {message: "Invalid password."});
+      // }
     })
     .catch((err) => {
       return done(err);
