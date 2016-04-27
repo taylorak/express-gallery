@@ -8,6 +8,13 @@ block title
 
 
 block content
+div(id='loginGallery')
+  a(href='/signup')
+    p Login
+  p  |
+  a(href='/register')
+    p Sign Up
+  div(id='edgeGaurd')
 div(id='mainGallery')
   div(id='headerGallery')
     div(id='titleGallery')
@@ -15,13 +22,16 @@ div(id='mainGallery')
     div(id='blurbGallery')
       p Surround yourself with angels. In life there will be road blocks but we will over come it. We the best. Stay focused. Congratulations, you played yourself. Give thanks to the most high. Give thanks to the most high. Always remember in the jungle there’s a lot of they in there, after you overcome they, you will make it to paradise. They don’t want us to win. Don’t ever play yourself. Elliptical talk. Egg whites, turkey sausage, wheat toast, water. Of course they don’t want us to eat our breakfast, so we are going to enjoy our breakfast.
   div(id='largePhotoGallery')
-    img(src='http://lorempixel.com/965/400/')
+
+    div(id='large' style="background-image: url('http://payload.cargocollective.com/1/0/128/1388457/02-ottoman-architecture_2.jpg')")
+
+    div(id='small' style="background-image('http://payload.cargocollective.com/1/0/128/1388457/09-ottoman-architecture_9.jpg')")
+
   div(class='spacerGallery')
-    div(id='mixedPhotosGallery')
-      each photo in photos
-        div(class='smallPhotosGallery')
-          a(href='/gallery/#{photo.id}')
-            img(src='#{photo.link}')
-          p #{photo.author}
-          p #{photo.description}
-  div(class='spacerGallery')
+  div(id='mixedPhotosGallery')
+    each photo in photos
+      a(href='/gallery/#{photo.id}')
+        div(class='smallPhotosGallery' id='photoNumber' + '#{photo.id})' style='background-image: url(#{photo.link})')
+        p #{photo.description}
+        p #{photo.author}
+div(class='spacerGallery')
