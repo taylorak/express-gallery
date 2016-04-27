@@ -5,14 +5,17 @@ block title
     |Image Gallery
 
 block content
-  h1 Gallery
-  div(id='blurbContainer')
-    h2(id='blurb')
-
-  ul
+div(id='main')
+  div(id='header')
+    div(id='title')
+    div(id='blurb')
+  div(id='largePhoto')
+div(id='spacer')
+  div(id='mixedPhotos')
     each photo in photos
-      li
+      div(class='smallPhotos')
         a(href='/gallery/#{photo.id}')
           img(src='#{photo.link}')
         p #{photo.author}
         p #{photo.description}
+div(id='spacer')

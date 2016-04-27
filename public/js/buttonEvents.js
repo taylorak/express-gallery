@@ -34,3 +34,11 @@ function editPhoto(evt) {
     window.location.href = response.redirect;
   }
 }
+
+function editShow(){
+  document.getElementById("photoBlur").className = "editShow";
+}
+
+function editHide(){
+  document.getElementById("photoBlur").className = "editHide";
+}
