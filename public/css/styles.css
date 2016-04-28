@@ -332,7 +332,7 @@ table {
       background-size: cover;
       background-position: center; } }
 
-@media screen and (max-width: 615px) {
+@media only screen and (max-width: 615px) {
   /* line 249, /Users/tyleryoung/DevLeague/express-gallery/scss/styles.scss */
   #mixedPhotosGallery {
     display: -webkit-flex;
