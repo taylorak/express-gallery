@@ -327,9 +327,11 @@ height: 10%;
     display: none;
   }
 }
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+    #blurbGallery {
 
-
-
+    }
+  }
 }
 
 @media screen and (min-width: 1795px) {
