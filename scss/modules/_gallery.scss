@@ -98,13 +98,14 @@ font-weight: 100;
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
     color: RGBA(114, 114, 114, 1.00);
+    flex: 0 1 33%;
   }
   .smallPhotosGallery {
-    flex: 1 1 33%;
     height: 275px;
     background-size: cover;
     background-position: center;
     padding-bottom: 2%;
+    width: 100%;
   }
 }
 .spacerGallery {
