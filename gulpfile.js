@@ -3,19 +3,21 @@ var sass = require('gulp-sass');
 var nodemon = require('gulp-nodemon');
 var browserSync = require('browser-sync').create();
 var autoprefixer = require('gulp-autoprefixer');
+var sourcemaps = require('gulp-sourcemaps');
+
+
 
 
 gulp.task('sass',  function () {
   return gulp.src('./scss/*.scss')
-      .pipe(sass({
-        errLogToConsole : true,
-        sourceComments : true,
-      }).on('error', sass.logError))
-      .pipe(autoprefixer({
+    .pipe(sourcemaps.init())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer({
       browsers: ['last 2 versions'],
       cascade: false
     }))
-      .pipe(gulp.dest('./public/css'));
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('./public/css'));
 });
 
 gulp.task('browserSync', ['nodemon'], function() {
