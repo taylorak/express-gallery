@@ -30,6 +30,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 setUpPassport();
 
+app.use((req, res, next) => {
+  res.locals.user = req.user;
+  next();
+});
+
 app.use('/gallery', galleryRoute);
 app.use('/register', registerRoute);
 app.use('/login', loginRoute);

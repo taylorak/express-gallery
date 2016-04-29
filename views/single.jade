@@ -1,9 +1,7 @@
-doctype html
+extends ./layout.jade
 
 block title
-  title Image
-  style
-    include ../public/css/styles.css
+  title _ARCHITEKT: #{photo.desription}
 
 block content
   div(id="container")
@@ -23,22 +21,5 @@ block content
       div(class="sideContainer")
         a(class="sideImageLink" href="/gallery/#{photo.id}" style="background-image: url('#{photo.link}')")
         div(class="sideInfo") #{photo.description}
-  //- div(id="container")
-  //-   div(id="imageContainer")
-  //-     div(id='photoBlur' class='editShow')
-  //-       div(id="photoForm")
-  //-         input(placeholder=' Enter new image link' name ='link')
-  //-         input(name='author' placeholder=' #{photo.author}')
-  //-         input(type='text' name ='description' placeholder=' #{photo.description}')
-  //-         button Submit
-  //-         button(onclick='editHide()') Cancel
 
-  //-     img(id="photo" src="#{photo.link}")
-  //-     div(id="buttons")
-  //-       a(id="editButton" href="/gallery/#{photo.id}" onclick='editShow()')
-  //-         button Edit
-  //-       a(id="deleteButton" href="/gallery/#{photo.id}")
-  //-         button Delete
-  //-   p #{photo.author}
-  //-   p #{photo.description}
   script(type="text/javascript" src="/js/buttonEvents.js")

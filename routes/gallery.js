@@ -65,8 +65,13 @@ router.route('/')
   .get((req, res) => {
     Photo.findAll()
     .then((photos) => {
+      console.log('PHOTOS', photos);
+      console.log('IS AUTH', req.isAuthenticated());
+      console.log('UN', req.user);
+
        res.render('gallery', {
-          photos: photos
+          photos: photos,
+          isAuthenticated: req.isAuthenticated()
        });
     }).catch((err) => {
       res.json({success: false, err: err});

@@ -55,6 +55,12 @@ font-weight: 100;
     border-right: solid 1px RGBA(114, 114, 114, 1.00);
     text-align: right;
     right: 0;
+
+    a{
+      color: RGBA(114, 114, 114, 1.00);
+      text-decoration: none;
+    }
+
   }
   #blurbGallery {
     margin-left: 2%;
@@ -365,11 +371,11 @@ height: 10%;
 // ~ * ~ * ~ * ~ * ~ * ~ * ~ * ~ * ~ * ~ * ~ * ~ * ~ * ~ * ~ * ~ *
 
   #container {
-    padding: 100px 0 100px 0;
+    padding: 50px 0 100px 0;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    width: 80%;
+    width: 75%;
     margin: 0 auto;
     height: 900px;
   }
@@ -434,7 +440,7 @@ height: 10%;
   }
 
 
-@media screen and (max-width: 1348px) {
+@media screen and (max-width: 1050px) {
   #multiple {
     //visibility: hidden;
     display: none;
