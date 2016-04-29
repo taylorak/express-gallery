@@ -39,7 +39,6 @@ router.route('/:id')
       if(!photo) {
         return res.json({success: false, err: new Error("ID DOES NOT EXIST")});
       }
-
       res.render('single', {
           photo: photo,
           photos: photos.slice(0,3)
@@ -93,7 +92,8 @@ router.route('/')
     Photo.create({
       author: req.body.author,
       link: req.body.link,
-      description: req.body.description
+      description: req.body.description,
+      user_id: req.user.id
     })
     .then(() => {
       res.redirect('/gallery');

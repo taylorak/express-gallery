@@ -8,9 +8,11 @@ block content
     div(id="single")
       div(id="image" style="background-image: url('#{photo.link}')")
       div(id="description") #{photo.description}
-      div(id="buttons")
-          button(class="button" id='editButton') Edit
-          button(class="button" id='deleteButton') Delete
+        if user
+          if user.id == photo.user_id
+            div(id='buttons')
+              button(class="button" id='editButton') Edit
+              button( href='gallery/#{photo.id}' class="button" id='deleteButton') Delete
     div(id="multiple")
       each photograph in photos
         div(class="sideContainer")
