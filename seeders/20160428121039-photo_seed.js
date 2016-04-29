@@ -42,6 +42,14 @@ module.exports = {
         user_id: 1
 
       }, {
+        link: 'http://payload.cargocollective.com/1/0/128/1388457/02-ottoman-architecture_2.jpg',
+        author: 'Ulya Vogt-Göknil',
+        description: 'From the 1966 book Living architecture: Ottoman',
+                createdAt: new Date(),
+        updatedAt: new Date(),
+        user_id: 1
+
+      },{
         link: 'http://payload.cargocollective.com/1/0/128/1388457/03-ottoman-architecture_905.jpg',
         author: 'Ulya Vogt-Göknil',
         description: 'From the 1966 book Living architecture: Ottoman',
