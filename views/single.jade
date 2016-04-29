@@ -9,8 +9,8 @@ block content
       div(id="image" style="background-image: url('#{photo.link}')")
       div(id="description") #{photo.description}
       div(id="buttons")
-        a(id="editButton" href="/gallery/#{photo.id}")
-          button(class="button") Edit
+          button(class="button" id='editButton') Edit
+          button(class="button" id='deleteButton') Delete
     div(id="multiple")
       each photograph in photos
         div(class="sideContainer")

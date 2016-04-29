@@ -25,8 +25,6 @@ router.get('/new', isAuthenticated, (req, res) => {
 
 router.route('/:id')
   .get((req, res) => {
-    // Photo.findById(req.params.id)
-    // .then((photo) => {
     Photo.findAll()
     .then((photos) => {
       let photo;
@@ -34,7 +32,6 @@ router.route('/:id')
       for(var i = 0; i < photos.length; i++) {
         if(photos[i].id.toString() === req.params.id) {
           photo = photos.splice(i, 1)[0];
-          console.log("PHOTO", photo);
           break;
         }
       }
@@ -82,7 +79,6 @@ router.route('/:id')
 router.route('/')
   .get((req, res) => {
     Photo.findAll({
-      limit: 6
     })
     .then((photos) => {
       res.render('gallery', {
