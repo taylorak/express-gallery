@@ -25,6 +25,7 @@ router.get('/new', isAuthenticated, (req, res) => {
 
 router.route('/:id')
   .get((req, res) => {
+    console.log("GET PHOTO");
     Photo.findAll()
     .then((photos) => {
       let photo;
@@ -37,14 +38,17 @@ router.route('/:id')
       }
 
       if(!photo) {
-        return res.json({success: false, err: new Error("ID DOES NOT EXIST")});
+        console.log("ID does not exist");
+        return res.json({success: false, err: "ID DOES NOT EXIST"});
       }
+
       res.render('single', {
           photo: photo,
           photos: photos.slice(0,3)
        });
     })
     .catch((err) => {
+      console.log("PHOTO DATABASE ERROR");
       res.json({success : false, err: err});
     });
 
@@ -65,26 +69,33 @@ router.route('/:id')
     });
   })
   .delete(isAuthenticated, yourPhoto, (req, res) => {
+    console.log('Delete');
     Photo.destroy({
       where: {
         id: req.params.id
       }
     }).then(() => {
-      res.json({success: true, redirect: '/gallery'});
+      console.log("redirect");
+      return res.redirect('/gallery');
+      // res.json({success: true, redirect: '/gallery'});
+    }).catch((err) => {
+      console.log("delete error", err);
+      res.json({success: false, err: err});
     });
   });
 
 
 router.route('/')
   .get((req, res) => {
-    Photo.findAll({
-    })
+    Photo.findAll()
     .then((photos) => {
+      console.log(photos[0]);
       res.render('gallery', {
         staticPhoto: photos.shift(),
         photos: photos
       });
     }).catch((err) => {
+      console.log("error");
       res.json({success: false, err: err});
     });
   })
