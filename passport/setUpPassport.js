@@ -21,6 +21,7 @@ let setUpPassport = () => {
 
   passport.use('login', new LocalStrategy(
     (username, password, done) => {
+    console.log("PASSPORT");
     User.findOne({where: {username: username}})
     .then((user) => {
       if(!user) {
@@ -33,11 +34,6 @@ let setUpPassport = () => {
           return done(null, false, {message: "Invalid password."});
         }
       });
-      // if (user.password === password) {
-      //   return done(null, user);
-      // } else {
-      //   return done(null, false, {message: "Invalid password."});
-      // }
     })
     .catch((err) => {
       return done(err);

@@ -6,15 +6,15 @@ var authentication = {
       .then((photo)=> {
         if (req.user.id === photo.user_id) {
           return next();
+        } else {
+          return res.redirect('/gallery/' + req.params.id);
         }
       }).catch((err) => {
-            res.json({success: false, err: err});
-        });
-      return res.redirect('/gallery/' + req.params.id);
+            return res.json({success: false, err: err});
+      });
   },
 
   isAuthenticated: (req, res, next) => {
-    console.log('AUTHENTICATION');
     if (!req.isAuthenticated()) {
       return res.redirect('/login');
     }

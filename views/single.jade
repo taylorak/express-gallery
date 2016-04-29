@@ -11,8 +11,12 @@ block content
         if user
           if user.id == photo.user_id
             div(id='buttons')
-              button(class="button" id='editButton') Edit
-              button( href='gallery/#{photo.id}' class="button" id='deleteButton') Delete
+              a(href="/gallery/#{photo.id}" id="editButton")
+              button(class="button") Edit
+              form(method="POST" action="/gallery/#{photo.id}/?_method=DELETE" enctype="application/x-www-form-urlencoded")
+                button(class="button") Delete
+              //- a(href="/gallery/#{photo.id}" id="deleteButton")
+              //-   button(class="button") Delete
     div(id="multiple")
       each photograph in photos
         div(class="sideContainer")
@@ -20,4 +24,4 @@ block content
           div(class="sideInfo") #{photograph.description}
 
 
-  script(type="text/javascript" src="/js/buttonEvents.js")
+  //- script(type="text/javascript" src="/js/buttonEvents.js")

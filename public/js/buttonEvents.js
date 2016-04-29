@@ -6,10 +6,11 @@ editButton.addEventListener('click',editButtonClick);
 
 function deleteButtonClick(evt) {
   evt.preventDefault();
-  var xhr = new XMLHttpRequest();
-  xhr.addEventListener('load', deletePhoto);
-  xhr.open('DELETE', this.href);
-  xhr.send();
+  // console.log('CLICK', this.href);
+  // var xhr = new XMLHttpRequest();
+  // xhr.addEventListener('load', deletePhoto);
+  // xhr.open('DELETE', this.href);
+  // xhr.send();
 }
 
 function editButtonClick(evt) {
@@ -22,6 +23,7 @@ function editButtonClick(evt) {
 
 
 function deletePhoto(evt) {
+  console.log("delete Photo");
   var response = JSON.parse(this.responseText);
   if(response.success === true) {
     window.location.href = response.redirect;
