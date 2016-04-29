@@ -2,7 +2,8 @@
 
 const express = require('express');
 const router = express.Router();
-
+const isAuthenticated = require('../middleware/authentication').isAuthenticated;
+const yourPhoto = require('../middleware/authentication').yourPhoto;
 const Photo = require('../models').Photo;
 
 
@@ -18,7 +19,7 @@ router.get('/:id/edit', (req, res) => {
   });
 });
 
-router.get('/new', (req, res) => {
+router.get('/new', isAuthenticated, (req, res) => {
   res.render('new');
 });
 
@@ -34,7 +35,7 @@ router.route('/:id')
       res.json({success : false, err: err});
     });
   })
-  .put((req, res) => {
+  .put(isAuthenticated, yourPhoto, (req, res) => {
     Photo.update({
       author: req.body.author,
       link: req.body.link,
@@ -49,7 +50,7 @@ router.route('/:id')
       res.json({success : false, err: err});
     });
   })
-  .delete((req, res) => {
+  .delete(isAuthenticated, yourPhoto, (req, res) => {
     Photo.destroy({
       where: {
         id: req.params.id
@@ -71,7 +72,7 @@ router.route('/')
       res.json({success: false, err: err});
     });
   })
-  .post((req, res) => {
+  .post(isAuthenticated, (req, res) => {
     Photo.create({
       author: req.body.author,
       link: req.body.link,

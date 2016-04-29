@@ -8,7 +8,7 @@ block content
       div(id='photoCover')
       img(src='#{photo.link}')
       form(method="POST" action="/gallery/#{photo.id}?_method=PUT")
-        input(placeholder='Enter new image link' name ='link')
+        input(placeholder='Enter new image link' name ='link' value='#{photo.link}')
         input(value='#{photo.author}' name='author' placeholder='#{photo.author}')
         input(type='text' value='#{photo.description}' name ='description' placeholder='#{photo.description}')
         button Submit Changes
