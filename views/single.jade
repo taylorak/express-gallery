@@ -12,14 +12,10 @@ block content
         a(id="editButton" href="/gallery/#{photo.id}")
           button(class="button") Edit
     div(id="multiple")
-      div(class="sideContainer")
-        a(class="sideImageLink" href="/gallery/(#{photo.id}" style="background-image: url('#{photo.link}')")
-        div(class="sideInfo") #{photo.description}
-      div(class="sideContainer")
-        a(class="sideImageLink" href="/gallery/#{photo.id}" style="background-image: url('#{photo.link}')")
-        div(class="sideInfo") #{photo.description}
-      div(class="sideContainer")
-        a(class="sideImageLink" href="/gallery/#{photo.id}" style="background-image: url('#{photo.link}')")
-        div(class="sideInfo") #{photo.description}
+      each photograph in photos
+        div(class="sideContainer")
+          a(class="sideImageLink" href="/gallery/#{photograph.id}" style="background-image: url('#{photograph.link}')")
+          div(class="sideInfo") #{photograph.description}
+
 
   script(type="text/javascript" src="/js/buttonEvents.js")

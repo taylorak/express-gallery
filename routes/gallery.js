@@ -27,9 +27,26 @@ router.route('/:id')
   .get((req, res) => {
     Photo.findById(req.params.id)
     .then((photo) => {
-      res.render('single', {
-          photo: photo
-       });
+      Photo.findAll({
+        where: {
+          createdAt: {
+            $lt: new Date()
+          },
+          id: {
+            $ne: req.params.id
+          }
+        },
+        limit: 3
+      })
+      .then((photos) => {
+        res.render('single', {
+            photo: photo,
+            photos: photos
+         });
+      })
+      .catch((err) => {
+        res.json({success : false, err: err});
+      });
     })
     .catch((err) => {
       res.json({success : false, err: err});
@@ -65,13 +82,8 @@ router.route('/')
   .get((req, res) => {
     Photo.findAll()
     .then((photos) => {
-      console.log('PHOTOS', photos);
-      console.log('IS AUTH', req.isAuthenticated());
-      console.log('UN', req.user);
-
        res.render('gallery', {
           photos: photos,
-          isAuthenticated: req.isAuthenticated()
        });
     }).catch((err) => {
       res.json({success: false, err: err});
