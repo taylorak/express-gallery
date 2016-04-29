@@ -4,8 +4,8 @@ block title
   title _ARCHITEKT
 block content
     div(id='largePhotoGallery')
-
-      div(id='large' style="background-image: url('http://payload.cargocollective.com/1/0/128/1388457/02-ottoman-architecture_2.jpg')")
+      a(href='/gallery/#{staticPhoto.id}')
+        div(id='large' style="background-image: url('#{staticPhoto.link}')")
     div(class='spacerGallery')
     div(id='mixedPhotosGallery')
       each photo in photos

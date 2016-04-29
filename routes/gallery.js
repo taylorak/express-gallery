@@ -25,15 +25,33 @@ router.get('/new', isAuthenticated, (req, res) => {
 
 router.route('/:id')
   .get((req, res) => {
-    Photo.findById(req.params.id)
-    .then((photo) => {
+    // Photo.findById(req.params.id)
+    // .then((photo) => {
+    Photo.findAll()
+    .then((photos) => {
+      let photo;
+
+      for(var i = 0; i < photos.length; i++) {
+        if(photos[i].id.toString() === req.params.id) {
+          photo = photos.splice(i, 1)[0];
+          console.log("PHOTO", photo);
+          break;
+        }
+      }
+
+      if(!photo) {
+        return res.json({success: false, err: new Error("ID DOES NOT EXIST")});
+      }
+
       res.render('single', {
-          photo: photo
+          photo: photo,
+          photos: photos.slice(0,3)
        });
     })
     .catch((err) => {
       res.json({success : false, err: err});
     });
+
   })
   .put(isAuthenticated, yourPhoto, (req, res) => {
     Photo.update({
@@ -63,16 +81,14 @@ router.route('/:id')
 
 router.route('/')
   .get((req, res) => {
-    Photo.findAll()
+    Photo.findAll({
+      limit: 6
+    })
     .then((photos) => {
-      console.log('PHOTOS', photos);
-      console.log('IS AUTH', req.isAuthenticated());
-      console.log('UN', req.user);
-
-       res.render('gallery', {
-          photos: photos,
-          isAuthenticated: req.isAuthenticated()
-       });
+      res.render('gallery', {
+        staticPhoto: photos.shift(),
+        photos: photos
+      });
     }).catch((err) => {
       res.json({success: false, err: err});
     });
