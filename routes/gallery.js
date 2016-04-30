@@ -10,8 +10,9 @@ const Photo = require('../models').Photo;
 router.get('/:id/edit', (req, res) => {
   Photo.findById(req.params.id)
   .then((photo) => {
-    res.render('edit', {          photo: photo
-       });
+    res.render('edit', {
+      photo: photo
+    });
   })
   .catch((err) => {
     res.json({success : false, err: err});
