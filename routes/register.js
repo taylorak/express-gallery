@@ -31,7 +31,7 @@ router.route('/')
           .then((user) => {
             req.login(user, (err) => {
               if(err) {
-                return next(err);
+                return next({status: 500, message: 'Error finding Photo'});
               }
               return res.redirect('/gallery');
             });

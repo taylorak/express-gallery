@@ -1,0 +1,10 @@
+doctype html
+
+head
+  title #{status} Error
+  style
+    include ../public/css/styles.css
+body
+  div#errorDiv
+    h1#errorStatus #{status}
+    p#errorMessage #{message}

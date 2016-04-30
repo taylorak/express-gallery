@@ -7,16 +7,19 @@ const yourPhoto = require('../middleware/authentication').yourPhoto;
 const Photo = require('../models').Photo;
 
 
-router.get('/:id/edit', (req, res) => {
+router.get('/:id/edit', (req, res, next) => {
   Photo.findById(req.params.id)
   .then((photo) => {
+    if(!photo) {
+      return next({status: 404, message: 'Photo not Found'});
+    }
     res.render('edit', {
       photo: photo
     });
   })
   .catch((err) => {
-    res.json({success : false, err: err});
-    });
+    return next({status: 500, message: 'Error Finding Photo'});
+  });
 });
 
 router.get('/new', isAuthenticated, (req, res) => {
@@ -24,7 +27,7 @@ router.get('/new', isAuthenticated, (req, res) => {
 });
 
 router.route('/:id')
-  .get((req, res) => {
+  .get((req, res, next) => {
     Photo.findAll()
     .then((photos) => {
       let photo;
@@ -37,7 +40,7 @@ router.route('/:id')
       }
 
       if(!photo) {
-        return res.json({success: false, err: "ID DOES NOT EXIST"});
+        return next({status: 404, message: 'Photo not Found'});
       }
 
       res.render('single', {
@@ -46,11 +49,11 @@ router.route('/:id')
        });
     })
     .catch((err) => {
-      res.json({success : false, err: err});
+      return next({status: 500, message: 'Error Finding Photo'});
     });
 
   })
-  .put(isAuthenticated, yourPhoto, (req, res) => {
+  .put(isAuthenticated, yourPhoto, (req, res, next) => {
     Photo.update({
       author: req.body.author,
       link: req.body.link,
@@ -60,10 +63,15 @@ router.route('/:id')
       where: {
         id : req.params.id
       }
-    }).then(() => {
+    }).then((photo) => {
+
+      if(!photo) {
+        return next({status: 404, message: 'Photo not Found'});
+      }
+
      res.redirect('/gallery/' + req.params.id);
     }).catch((err) => {
-      res.json({success : false, err: err});
+      return next({status: 500, message: 'Error Finding Photo'});
     });
   })
   .delete(isAuthenticated, yourPhoto, (req, res) => {
@@ -71,17 +79,20 @@ router.route('/:id')
       where: {
         id: req.params.id
       }
-    }).then(() => {
+    }).then((photo) => {
+      if(!photo) {
+        return next({status: 404, message: 'Photo not Found'});
+      }
+
       return res.redirect('/gallery');
-      // res.json({success: true, redirect: '/gallery'});
     }).catch((err) => {
-      res.json({success: false, err: err});
+      return next({status: 500, message: 'Error Finding Photo'});
     });
   });
 
 
 router.route('/')
-  .get((req, res) => {
+  .get((req, res, next) => {
     Photo.findAll()
     .then((photos) => {
       res.render('gallery', {
@@ -89,20 +100,20 @@ router.route('/')
         photos: photos
       });
     }).catch((err) => {
-      res.json({success: false, err: err});
+      return next({status: 500, message: 'Error Finding Photo'});
     });
   })
-  .post(isAuthenticated, (req, res) => {
+  .post(isAuthenticated, (req, res, next) => {
     Photo.create({
       author: req.body.author,
       link: req.body.link,
       description: req.body.description,
       user_id: req.user.id
     })
-    .then(() => {
+    .then((photo) => {
       res.redirect('/gallery');
     }).catch((err) => {
-      res.json({success: false});
+      return next({status: 500, message: 'Error Finding Photo'});
     });
   });
 
