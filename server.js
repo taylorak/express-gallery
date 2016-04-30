@@ -52,7 +52,7 @@ app.use('/logout', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  res.render('index');
+  res.redirect('/gallery');
 });
 
 app.use((err, req, res, next) => {
