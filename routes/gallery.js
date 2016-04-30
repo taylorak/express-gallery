@@ -16,7 +16,7 @@ router.get('/:id/edit', (req, res) => {
   })
   .catch((err) => {
     res.json({success : false, err: err});
-  });
+    });
 });
 
 router.get('/new', isAuthenticated, (req, res) => {
