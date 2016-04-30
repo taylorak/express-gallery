@@ -1,16 +1,19 @@
-doctype html
+extends ./layout.jade
 
 block title
   title
     |New Image
 
 block content
-  h1 Gallery
-  div(id='blurbContainer')
-    h2(id='blurb')
-      div
-      form(method="POST" action="/gallery")
-        input(placeholder='Enter new image link' name ='link')
-        input(name='author' placeholder='author')
-        input(type='text' name ='description' placeholder='description')
-        button Submit Changes
+  div#suroundingNew
+    div#newTitle
+      p Add New Image
+
+    form#newForm(method="POST" action="/gallery")
+      input(placeholder='Enter new image link' name ='link' autofocus required)
+      input(name='author' placeholder='Author' required)
+      input(type='text' name ='description' placeholder='Description' required)
+      button Submit Changes
+
+
+
