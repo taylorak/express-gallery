@@ -3,9 +3,9 @@
 module.exports = {
   up: function (queryInterface, Sequelize) {
       return queryInterface.bulkInsert('Photos', [{
-        link: 'https://farm1.staticflickr.com/691/20664938416_4e4b224684_h.jpg',
-        author: 'IamIrene',
-        description: 'Grand Canyon After the Rain',
+        link: 'https://c2.staticflickr.com/8/7419/12021006775_c9d3a61449_k.jpg',
+        author: 'Gene Wahrlich',
+        description: 'Cuernos del Paine, Chile',
         createdAt: new Date(),
         updatedAt: new Date(),
         user_id: 1
