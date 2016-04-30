@@ -57,7 +57,8 @@ router.route('/:id')
     Photo.update({
       author: req.body.author,
       link: req.body.link,
-      description: req.body.description
+      description: req.body.description,
+      user_id: req.user.id
     }, {
       where: {
         id : req.params.id
