@@ -15,7 +15,7 @@
     flex-flow: column nowrap;
 
   .blurCover {
-    background-color: rgba(0,0,0, 0.85);
+    background-color: rgba(0,0,0, 0.80);
     height: 100%;
     width: 100%;
     position: absolute;
@@ -31,10 +31,10 @@
         width: 40%;
       }
         input {
-
+          box-sizing: border-box;
           margin-bottom: 10%;
           width: 100%;
-          padding: 1% 0 1% 0;
+          padding: 1% 2% 1% 2%;
           outline-color: RGBA(25, 227, 177, 1.0);
           opacity: .92;
         }
@@ -42,7 +42,7 @@
           font-family: 'Roboto';
           font-weight: 100;
           margin-top: 6%;
-          margin-left: 1%;
+          margin-left: 0;
           border-width: 0;
           background-color: white;
           border: solid 1px RGBA(114, 114, 114, 1.00);
@@ -186,10 +186,11 @@ i {
       width: 100%;
     }
       input {
+        box-sizing: border-box;
         flex: 0 0 auto;
         margin-bottom: 10%;
         width: 95%;
-        padding: 2% 0 2% 0;
+        padding: 2% 0 2% 2%;
         outline-color: RGBA(25, 227, 177, 1.00);
         border: none;
         border-radius: 0;
