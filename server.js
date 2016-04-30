@@ -33,6 +33,7 @@ setUpPassport();
 app.use((req, res, next) => {
   res.locals.user = req.user;
   res.locals.errors = req.flash('error');
+  res.locals.info = req.flash('info');
   next();
 });
 
