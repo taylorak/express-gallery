@@ -11,7 +11,7 @@ router.route('/')
   .post(passport.authenticate('login', {
     successRedirect: '/gallery',
     failureRedirect: '/login',
-    failureFlash: false
+    failureFlash: true,
   }));
 
 module.exports = router;
