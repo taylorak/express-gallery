@@ -1,4 +1,4 @@
-{
+module.exports = {
  "development": {
    "username": "gallery_user",
    "password": null,
@@ -20,4 +20,4 @@
    "host": process.env.HOST,
    "dialect": process.env.DIALECT
  }
-}
+};
