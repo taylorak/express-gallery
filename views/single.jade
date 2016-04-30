@@ -2,26 +2,38 @@ extends ./layout.jade
 
 block title
   title _ARCHITEKT: #{photo.description}
+  link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css")
+
 
 block content
   div(id="container")
     div(id="single")
       div(id="image" style="background-image: url('#{photo.link}')")
+        div(id='blurDiv' class='displayNone')
+          i(class="fa fa-times fa-2x" aria-hidden="true" id='cancelButton')
+          form(method='POST' action='/gallery/#{photo.id}?_method=PUT')
+            input(id='linkInput' placeholder='Image Link' required)
+            input(id='authorInput' placeholder='Author' required)
+            input(id='descInput' placeholder='Description' required)
+            button(id='submitButton') Submit
+
+
       div(id="description") #{photo.description}
-        if user
-          if user.id == photo.user_id
-            div(id='buttons')
-              a(href="/gallery/#{photo.id}" id="editButton")
-              button(class="button") Edit
+      if user
+        if user.id == photo.user_id
+          div(id="buttonsED")
+            div(class='buttonE')
+              a(href="/gallery/#{photo.id}#image"  id="editButton")
+                button Edit
+            div(id='buttonD')
               form(method="POST" action="/gallery/#{photo.id}/?_method=DELETE" enctype="application/x-www-form-urlencoded")
-                button(class="button") Delete
-              //- a(href="/gallery/#{photo.id}" id="deleteButton")
-              //-   button(class="button") Delete
+                button(id='deleteButton') Delete
+
     div(id="multiple")
       each photograph in photos
         div(class="sideContainer")
           a(class="sideImageLink" href="/gallery/#{photograph.id}" style="background-image: url('#{photograph.link}')")
           div(class="sideInfo") #{photograph.description}
 
-
-  //- script(type="text/javascript" src="/js/buttonEvents.js")
+  if user
+    script(type="text/javascript" src="/js/buttonEvents.js")

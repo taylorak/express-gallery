@@ -10,7 +10,7 @@ block content
     div(id='mixedPhotosGallery')
       each photo in photos
         a(href='/gallery/#{photo.id}')
-          div(class='smallPhotosGallery' id='photoNumber' + '#{photo.id})' style='background-image: url(#{photo.link})')
+          div(class='smallPhotosGallery' id='photoNumber' + '#{photo.id}' style='background-image: url(#{photo.link})')
           p #{photo.description}
           p #{photo.author}
     div(class='spacerGallery')

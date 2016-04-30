@@ -14,23 +14,91 @@
     display: flex;
     flex-flow: column nowrap;
 
+  .blurCover {
+    background-color: rgba(0,0,0, 0.85);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-flow: column nowrap;
+    align-items: center;
+      form {
+        display: flex;
+        justify-content: center;
+        flex-flow: column nowrap;
+        height: 40%;
+        width: 40%;
+      }
+        input {
+
+          margin-bottom: 10%;
+          width: 100%;
+          padding: 1% 0 1% 0;
+          outline-color: RGBA(25, 227, 177, 1.0);
+          opacity: .92;
+        }
+        #submitButton{
+          font-size: 1.25vw;
+          font-family: 'Roboto';
+          font-weight: 100;
+          margin-top: 6%;
+          margin-left: 1%;
+          border-width: 0;
+          background-color: white;
+          border: solid 1px RGBA(114, 114, 114, 1.00);
+          border-radius: 3px;
+          text-align: center;
+          outline: none;
+          padding: 2.1%;
+          opacity: .92;
+          &:hover {
+             border: solid 1px RGBA(200, 200, 200, 1.00);
+              }
+        }
+}
+
+.displayNone {
+  display: none;
+  visibility: hidden;
+}
+
     #image {
       flex: 1 0 50%;
-      height: 500px;
+      height: 100%;
       background-size: cover;
       background-position: center;
       margin-bottom: 10px;
+      position: relative;
     }
 
     #description {
       flex: 0 0 auto;
       margin-bottom: 10px;
     }
+  }
 
-    #buttons {
-      flex: 0 0 auto;
+#buttonsED {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  button {
+    border-width: 0;
+    background-color: white;
+    border: solid 1px RGBA(114, 114, 114, 1.00);
+    border-radius: 3px;
+    text-align: center;
+    outline: none;
+    &:hover {
+       border: solid 1px RGBA(200, 200, 200, 1.00);
     }
   }
+  #buttonD {
+    margin-left: 1%;
+  }
+}
+
+
 
   #multiple {
     flex: 0 0 25%;
@@ -54,7 +122,6 @@
       }
     }
   }
-
   .button {
     padding: 2%;
     border-width: 0;
@@ -71,6 +138,19 @@
        border: solid 1px RGBA(200, 200, 200, 1.00);
     }
   }
+
+i {
+  color: white;
+  padding: 1%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#editButton  {
+    transition: all 2s ease-in-out;
+}
+
 
 
 @media screen and (max-width: 1050px) {
@@ -94,8 +174,27 @@
   #single {
     flex: 0 0 100%;
     height: 65%;
+
+    .blurCover {
+    form {
+      display: flex;
+      justify-content: center;
+      flex-flow: column nowrap;
+      height: 40%;
+      width: 100%;
+    }
+      input {
+        margin-bottom: 10%;
+        width: 100%;
+        padding: 2% 0 2% 0;
+        outline-color: RGBA(25, 227, 177, 1.00);
+        border: none;
+        border-radius: 0;
+      }
   }
+}
   #container {
     width: 95%;
   }
+
 }
