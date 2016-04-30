@@ -10,8 +10,7 @@ const Photo = require('../models').Photo;
 router.get('/:id/edit', (req, res) => {
   Photo.findById(req.params.id)
   .then((photo) => {
-    res.render('edit', {
-          photo: photo
+    res.render('edit', {          photo: photo
        });
   })
   .catch((err) => {
@@ -25,7 +24,6 @@ router.get('/new', isAuthenticated, (req, res) => {
 
 router.route('/:id')
   .get((req, res) => {
-    console.log("GET PHOTO");
     Photo.findAll()
     .then((photos) => {
       let photo;
@@ -38,7 +36,6 @@ router.route('/:id')
       }
 
       if(!photo) {
-        console.log("ID does not exist");
         return res.json({success: false, err: "ID DOES NOT EXIST"});
       }
 
@@ -48,7 +45,6 @@ router.route('/:id')
        });
     })
     .catch((err) => {
-      console.log("PHOTO DATABASE ERROR");
       res.json({success : false, err: err});
     });
 
@@ -70,17 +66,14 @@ router.route('/:id')
     });
   })
   .delete(isAuthenticated, yourPhoto, (req, res) => {
-    console.log('Delete');
     Photo.destroy({
       where: {
         id: req.params.id
       }
     }).then(() => {
-      console.log("redirect");
       return res.redirect('/gallery');
       // res.json({success: true, redirect: '/gallery'});
     }).catch((err) => {
-      console.log("delete error", err);
       res.json({success: false, err: err});
     });
   });
@@ -90,13 +83,11 @@ router.route('/')
   .get((req, res) => {
     Photo.findAll()
     .then((photos) => {
-      console.log(photos[0]);
       res.render('gallery', {
         staticPhoto: photos.shift(),
         photos: photos
       });
     }).catch((err) => {
-      console.log("error");
       res.json({success: false, err: err});
     });
   })
