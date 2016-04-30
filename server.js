@@ -25,7 +25,7 @@ app.use(favicon(path.resolve(__dirname, 'public', 'favicon.ico')));
 app.use(cookieParser());
 app.use(flash());
 app.use(session({
-  secret: 'catbutts',
+  secret: process.env.SECRET,
   resave: false,
   saveUninitialized: false
 }));
