@@ -9,7 +9,7 @@ function editButtonClick(evt) {
   evt.preventDefault();
   if (editForm.className === 'displayNone') {
     editForm.className = 'blurCover';
-    window.location.href = editButton.href;
+    // window.location.href = editButton.href;
   }
 }
 
@@ -19,13 +19,3 @@ function cancelClick(evt) {
     editForm.className = 'displayNone';
   }
 }
-
-
-
-
-// function editPhoto(evt) {
-//   var response = JSON.parse(this.responseText);
-//   if(response.success === true) {
-//     window.location.href = response.redirect;
-//   }
-// }
