@@ -13,6 +13,7 @@ const galleryRoute = require('./routes/gallery');
 const registerRoute = require('./routes/register');
 const loginRoute = require('./routes/login');
 const setUpPassport = require('./passport/setUpPassport');
+const favicon = require('serve-favicon');
 
 const app = express();
 const db = require('./models');
@@ -20,6 +21,7 @@ const db = require('./models');
 app.set('view engine', 'jade');
 app.set('views', './views');
 
+app.use(favicon(path.resolve(__dirname, 'public', 'favicon.ico')));
 app.use(cookieParser());
 app.use(flash());
 app.use(session({
@@ -29,7 +31,7 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.resolve(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 setUpPassport();

@@ -8,9 +8,9 @@ block content
   div#suroundingReg
     div#regTitle
       p Make an Account
-    form#regForm(method="POST" action="/register")
+    form#regForm(method='POST' action='/register')
       input(name='username' placeholder='Username' required autofocus)
-      input(name='password' type='password' placeholder='Password' required)
+      input(name='password' pattern='.{6,}' type='password' placeholder='Password' required title='Password must have at least six characters')
       div(class='errors')
         p #{errors}
       button.button Register
