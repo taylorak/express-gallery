@@ -16,8 +16,8 @@ module.exports = {
  "production": {
    "username": process.env.USERNAME,
    "password": process.env.PASSWORD,
-   "database": process.env.DATABASE_URL,
-   "host": process.env.HOST,
+   "database": process.env.DATABASE,
+   "host": process.env.DATABASE_URL,
    "dialect": process.env.DIALECT
  }
 };
