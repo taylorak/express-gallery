@@ -12,9 +12,9 @@ block content
         div(id='blurDiv' class='displayNone')
           i(class="fa fa-times fa-2x" aria-hidden="true" id='cancelButton')
           form(method='POST' action='/gallery/#{photo.id}?_method=PUT')
-            input(id='linkInput' placeholder='Image Link' required)
-            input(id='authorInput' placeholder='Author' required)
-            input(id='descInput' placeholder='Description' required)
+            input(id='linkInput' name="link" placeholder='Image Link' required)
+            input(id='authorInput' name="author" placeholder='Author' required)
+            input(id='descInput' name="description" placeholder='Description' required)
             button(id='submitButton') Submit
 
 
