@@ -65,6 +65,13 @@ app.use((err, req, res, next) => {
   });
 });
 
+app.use((req, res) => {
+  res.status(404).render('error', {
+    status: 404,
+    message: 'Page does not Exist'
+  });
+});
+
 db.sequelize.sync().then(() => {
   app.listen(3000, () => {
     console.log('server running on port 3000');

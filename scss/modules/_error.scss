@@ -1,4 +1,4 @@
-#errorDiv {
+#errorHandlerDiv {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -7,10 +7,10 @@
   font-size: 4vw;
   margin-top: 15%;
 
- #errorStatus {
+ #errorHandlerStatus {
     flex: 0 0 100%;
   }
-  #errorMessage{
+  #errorHandlerMessage{
     flex: 0 0 100%;
   }
 }

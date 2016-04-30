@@ -7,21 +7,6 @@ const yourPhoto = require('../middleware/authentication').yourPhoto;
 const Photo = require('../models').Photo;
 
 
-router.get('/:id/edit', (req, res, next) => {
-  Photo.findById(req.params.id)
-  .then((photo) => {
-    if(!photo) {
-      return next({status: 404, message: 'Photo not Found'});
-    }
-    res.render('edit', {
-      photo: photo
-    });
-  })
-  .catch((err) => {
-    return next({status: 500, message: 'Error Finding Photo'});
-  });
-});
-
 router.get('/new', isAuthenticated, (req, res) => {
   res.render('new');
 });
