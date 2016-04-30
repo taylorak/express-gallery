@@ -50,9 +50,9 @@ module.exports = {
         user_id: 1
 
       },{
-        link: 'http://imgur.com/fbVEMLV',
-        author: 'Mark L.',
-        description: 'North Sister, Oregon, USA',
+        link: 'http://i.imgur.com/RkUE6fJ.jpg',
+        author: 'Vihiun',
+        description: 'North Caskades, Washington, USA',
                 createdAt: new Date(),
         updatedAt: new Date(),
         user_id: 1
