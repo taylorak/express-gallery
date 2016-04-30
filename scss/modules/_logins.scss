@@ -1,0 +1,55 @@
+ #suroundingLogin, #suroundingNew, #suroundingReg {
+  margin: 0 auto;
+  margin-top: 5%;
+  background-color: rgba(0, 0, 0, 0.85);
+  border-radius: 20px;
+  display: flex;
+  flex-flow: column nowrap;
+  width: 40%;
+  padding: 4% 5% 8% 5%;
+    p{
+      margin: 0 auto;
+    }
+ }
+
+#loginTitle, #newTitle, #regTitle {
+  text-align: center;
+  margin: 0 auto;
+  width: 80%;
+  color: white;
+  border-bottom: dotted 1px white;
+  margin-bottom: 4%;
+}
+
+
+#loginForm, #newForm, #regForm {
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 0 auto;
+ width: 75%;
+    input {
+      margin-bottom: 3%;
+    }
+    button {
+
+      margin: 0 auto;
+      margin-top: 4%;
+      width: 70%;
+    }
+}
+
+.errors{
+    margin: 0 auto;
+    text-align: center;
+  p{
+    color: RGBA(232, 159, 144, 1.00);
+  }
+}
+
+
+@media screen and (max-width: 670px) {
+
+   #suroundingLogin, #suroundingNew, #suroundingReg {
+  width: 80%;
+ }
+}

@@ -20,7 +20,7 @@ router.route('/')
     User.findOne({where: { username: username}})
     .then((user) => {
       if(user) {
-        req.flash('error', 'user already exists');
+        req.flash('error', 'Username already exists');
         return res.redirect('/register');
       } else {
         bcrypt.hash(password, saltRounds, (err, hash) => {

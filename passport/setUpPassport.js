@@ -25,13 +25,13 @@ let setUpPassport = () => {
     User.findOne({where: {username: username}})
     .then((user) => {
       if(!user) {
-        return done(null, false, {message: "No user has that username."});
+        return done(null, false, {message: "The username or password is invalid"});
       }
       bcrypt.compare(password, user.password, (err, res) => {
         if(res === true) {
           return done(null, user);
         } else {
-          return done(null, false, {message: "Invalid password."});
+          return done(null, false, {message: "The username or password is invalid"});
         }
       });
     })

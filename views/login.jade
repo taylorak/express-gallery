@@ -1,11 +1,16 @@
-doctype html
+extends ./layout.jade
 
 block title
   title Login
 
 block content
-  form(method="POST" action="/login")
-    input(name='username' placeholder='username' required autofocus)
-    input(name='password' type='password' placeholder='password' required)
-    button Login
-  div #{errors}
+  div#suroundingLogin
+    div#loginTitle
+      p Login
+
+    form(id='loginForm' method="POST" action="/login")
+      input(name='username' placeholder='Username' required autofocus)
+      input(name='password' type='password' placeholder='Password' required)
+      div(class='errors')
+        p #{errors}
+      button.button Login
