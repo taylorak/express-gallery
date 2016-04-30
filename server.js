@@ -22,7 +22,11 @@ app.set('views', './views');
 
 app.use(cookieParser());
 app.use(flash());
-app.use(session({secret: 'catbutts', resave: false, saveUninitialized: false}));
+app.use(session({
+  secret: 'catbutts',
+  resave: false,
+  saveUninitialized: false
+}));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));

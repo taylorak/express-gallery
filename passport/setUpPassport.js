@@ -21,7 +21,6 @@ let setUpPassport = () => {
 
   passport.use('login', new LocalStrategy(
     (username, password, done) => {
-    console.log("PASSPORT");
     User.findOne({where: {username: username}})
     .then((user) => {
       if(!user) {
