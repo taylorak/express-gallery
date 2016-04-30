@@ -1,0 +1,16 @@
+#errorDiv {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+  font-size: 4vw;
+  margin-top: 15%;
+
+ #errorStatus {
+    flex: 0 0 100%;
+  }
+  #errorMessage{
+    flex: 0 0 100%;
+  }
+}

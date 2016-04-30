@@ -55,6 +55,16 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
+app.use((err, req, res, next) => {
+  let status = err.status || 500;
+
+  res.status(status)
+  .render('error', {
+    status: err.status,
+    message: err.message
+  });
+});
+
 db.sequelize.sync().then(() => {
   app.listen(3000, () => {
     console.log('server running on port 3000');
