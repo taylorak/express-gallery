@@ -32,7 +32,7 @@ router.route('/:id')
     .then((photos) => {
       let photo;
 
-      for(var i = 0; i < photos.length; i++) {
+      for(let i = 0; i < photos.length; i++) {
         if(photos[i].id.toString() === req.params.id) {
           photo = photos.splice(i, 1)[0];
           break;
