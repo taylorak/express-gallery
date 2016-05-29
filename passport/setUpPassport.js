@@ -19,7 +19,7 @@ let setUpPassport = () => {
     });
   });
 
-  passport.use('login', new LocalStrategy(
+  passport.use('login2', new LocalStrategy(
     (username, password, done) => {
     User.findOne({where: {username: username}})
     .then((user) => {
