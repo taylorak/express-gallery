@@ -8,6 +8,7 @@ const flash = require('connect-flash');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
+const PORT = process.env.PORT || 3000;
 
 const galleryRoute = require('./routes/gallery');
 const registerRoute = require('./routes/register');
@@ -73,7 +74,7 @@ app.use((req, res) => {
 });
 
 db.sequelize.sync().then(() => {
-  app.listen(3000, () => {
+  app.listen(PORT, () => {
     console.log('server running on port 3000');
   });
 });
